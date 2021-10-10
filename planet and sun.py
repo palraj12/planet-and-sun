@@ -20,6 +20,16 @@ mouse over the scrollbar of the canvas.
 from turtle import Shape, Turtle, mainloop, Vec2D as Vec
 
 G = 6
+star = turtle.Turtle()
+ 
+star.right(75)
+star.forward(100)
+
+#star ui at the begining of main call
+for i in range(4):
+    star.right(144)
+    star.forward(100)
+turtle.done()
 
 class GravSys(object):
     def __init__(self):
@@ -64,6 +74,8 @@ class Star(Turtle):
             self.setheading(self.towards(self.gravSys.planets[0]))
         self.a = self.acc()
         self.v = self.v + dt*self.a
+        
+        
 
 ## create compound yellow/blue turtleshape for planets
 
@@ -107,6 +119,11 @@ def main():
     return "Done!"
 
 if __name__ == '__main__':
-    main()
+    main()  
+# Screen Setup 
+    wn = turtle.Screen()
+    wn.bgcolor("light green") #give your own color hex code 
+    wn.title("Solar System")
+    skk = turtle.Turtle()
     mainloop()
 
